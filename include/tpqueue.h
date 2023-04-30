@@ -18,9 +18,9 @@ class TPQueue {
             LIST.push_back(value);
         } else {
             bool f = true;
-            for (auto i = LIST.begin(); i != LIST.end(); i++) {
-                if (value.prior > *i.prior) {
-                    LIST.insert(i, value);
+            for (auto iter = LIST.begin(); iter != LIST.end(); iter++) {
+                if (value.prior > (*iter).prior) {
+                    LIST.insert(iter, value);
                     f = false;
                     break;
             }

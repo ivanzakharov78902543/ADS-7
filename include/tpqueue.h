@@ -24,6 +24,7 @@ class TPQueue {
                     f = false;
                     break;
             }
+         }
             if (f) {
                 LIST.push_back(value);
             }

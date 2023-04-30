@@ -4,7 +4,32 @@
 
 template<typename T>
 class TPQueue {
-  // реализация шаблона очереди с приоритетом на связанном списке
+  private:
+    list <T> LIST;
+  
+  public:
+    T pop() {
+        T elem = LIST.front()
+        LIST.pop_front();
+        return elem;
+    }
+    void push(const T& value) {
+        if (LIST.empty()) {
+            LIST.push_back(value);
+        }
+        else {
+            bool f = true;
+            for (auto i =   LIST.begin(); i != LIST.end(); i++) {
+                if (value.prior > *i.prior)
+                    LIST.insert(i, value);
+                    f = false;
+                    break;
+            }
+            if (f) {
+                LIST.push_back(value);
+            }
+        }
+    }
 };
 
 struct SYM {

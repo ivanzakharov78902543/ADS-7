@@ -6,8 +6,8 @@ using namespace std;
 template<typename T>
 class TPQueue {
  private:
-    list <T> LIST;
-  
+    std::list <T> LIST;
+
  public:
     T pop() {
         T elem = LIST.front()
@@ -20,7 +20,7 @@ class TPQueue {
         } else {
             bool f = true;
             for (auto i =   LIST.begin(); i != LIST.end(); i++) {
-                if (value.prior > *i.prior)
+                if (value.prior > *i.prior) {
                     LIST.insert(i, value);
                     f = false;
                     break;

@@ -2,7 +2,6 @@
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
 #include <list>
-using namespace std;
 template<typename T>
 class TPQueue {
  private:
@@ -19,7 +18,7 @@ class TPQueue {
             LIST.push_back(value);
         } else {
             bool f = true;
-            for (auto i =   LIST.begin(); i != LIST.end(); i++) {
+            for (auto i = LIST.begin(); i != LIST.end(); i++) {
                 if (value.prior > *i.prior) {
                     LIST.insert(i, value);
                     f = false;

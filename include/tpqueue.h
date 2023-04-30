@@ -1,13 +1,14 @@
 // Copyright 2022 NNTU-CS
 #ifndef INCLUDE_TPQUEUE_H_
 #define INCLUDE_TPQUEUE_H_
-
+#include <list>
+using namespace std;
 template<typename T>
 class TPQueue {
-  private:
+ private:
     list <T> LIST;
   
-  public:
+ public:
     T pop() {
         T elem = LIST.front()
         LIST.pop_front();
@@ -16,8 +17,7 @@ class TPQueue {
     void push(const T& value) {
         if (LIST.empty()) {
             LIST.push_back(value);
-        }
-        else {
+        } else {
             bool f = true;
             for (auto i =   LIST.begin(); i != LIST.end(); i++) {
                 if (value.prior > *i.prior)
